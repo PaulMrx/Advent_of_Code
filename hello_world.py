@@ -1,4 +1,3 @@
-
 import string
 
 string = "bvwbjplbgvbhsrlpgdmjqwftvncz"
