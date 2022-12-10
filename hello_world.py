@@ -10,7 +10,7 @@ for count, letter in enumerate(string):
 # print(list1)
 for i in list1:
     test = set(list(i))
-    res = 1 if len(test) != 14 else 0
+    res = int(len(test) != 1)
     final.append(res)
 print(final)
 #
