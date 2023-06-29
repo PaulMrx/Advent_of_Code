@@ -1,6 +1,5 @@
 from getpass import getpass
-
-# Add commetn to commit
+from random import choices
 
 def main():
 
@@ -72,8 +71,4 @@ while True:
         main()
 
 
-
-
-
-
-
+# Next step: Add a 1 player version with random inputs
