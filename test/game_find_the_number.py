@@ -1,7 +1,17 @@
 from getpass import getpass
-from random import choices
+from random import randrange
 
-def main():
+######################################################################################################
+def main_singleplayer():
+
+    number = randrange(100)
+    guess = randrange(5, 20)
+    print()
+    print(f"You have {guess} chances to find the Number")
+    game(number, guess)
+
+
+def main_multiplayer():
 
     print()
     print("Player 1")
@@ -12,6 +22,8 @@ def main():
     print(f"You have {guess} chances to find the Number")
     game(number, guess)
 
+
+######################################################################################################
 # Get "Number" from Player 1
 def get_number():
     while True:
@@ -38,8 +50,9 @@ def get_guess():
         except ValueError:
             print("Error: chances has to be an integer")
 
-    
-# Game per se: Player has to find Player 1's number
+#######################################################################################################
+## Game ## Player has to find the correct number
+#######################################################################################################
 def game(number, guess):
     
     for i in range(guess):
@@ -61,14 +74,18 @@ def game(number, guess):
             print()
             break
 
-
+########################################################################################################
 # Do you want to play, replay or quit?
 while True:
     play = input("Do you want to play? [Y/N]  ").strip().upper()
     if play == "N":
         break
     else:
-        main()
-
-
-# Next step: Add a 1 player version with random inputs
+        while True:
+            play_type = input("Please select Single or Multiplayer? [S/M]  ").strip().upper()
+            if play_type == "S":
+                main_singleplayer()
+                break
+            elif play_type == "M":
+                main_multiplayer()
+                break
